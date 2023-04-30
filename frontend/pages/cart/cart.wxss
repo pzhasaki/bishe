@@ -1,0 +1,158 @@
+/**cart.wxss**/
+
+@import "../_template/template.wxss";
+
+.cart-section {
+  width: 100%;
+  background: #f4f4f4;
+}
+.temp-promise {
+  padding: 30rpx;
+}
+.promise-section {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.empty {
+  background: #fff;
+  padding: 190rpx 0 150rpx;
+  margin-bottom: 35rpx;
+}
+.empty-icon {
+  height: 250rpx;
+  width: 250rpx;
+  display: block;
+  margin: 0 auto;
+}
+.desc {
+  text-align: center;
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 35rpx;
+  display: block;
+}
+.recommend{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.recommend .u-title {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 40rpx 0;
+  display: block;
+}
+
+/* 产品 */
+.content {
+  padding-bottom: 98rpx;
+}
+.row {
+  background: #fff;
+  padding: 25px 30rpx 45rpx 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.row-lt {
+  display: flex;
+  flex: none;
+  margin-right: 25rpx;
+  align-items: center;
+}
+.check {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 38rpx;
+  background: #a0413e;
+  margin-right: 30rpx;
+}
+.row-lt-img {
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #f4f4f4;
+}
+.row-rt {
+  flex: 1;
+}
+.row-rt-name {
+  font-size: 28rpx;
+  line-height: 1;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+.row-rt-attr {
+  color: #999;
+  background-color: #f4f4f4;
+  padding: 0 15rpx;
+  line-height: 36rpx;
+  font-size: 22rpx;
+  margin-bottom: 15rpx;
+  display: inline-block;
+}
+.row-rt-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.row-rt-base-price {
+  color: #333;
+  font-size: 28rpx;
+}
+.row-rt-base-num {
+  width: 242rpx;
+  height: 52rpx;
+  display: flex;
+  border: 1rpx solid #e2e2e2;
+  align-items: center;
+  border-radius: 8rpx;
+}
+.num-item {
+  flex: 1;
+  text-align: center;
+  color: #333;
+  font-size: 40rpx;
+}
+.num-input {
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  color: #333;
+  font-size: 28rpx;
+}
+.bottom {
+  height: 98rpx;
+  background: #fafafa;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.bottom-lt {
+  display: flex;
+  align-items: center;
+}
+.bottom-lt text {
+  font-size: 28rpx;
+  color: #999;
+}
+.bottom-rt {
+  display: flex;
+  font-size: 28rpx;
+  height: 100%;
+  align-items: center;
+}
+.confirm {
+  width: 224rpx;
+  height: 100%;
+  line-height: 98rpx;
+  background: #b23131;
+  color: #fff;
+  margin-left: 33rpx;
+  text-align: center;
+}
+.total-price {
+  color: #b23131;
+}

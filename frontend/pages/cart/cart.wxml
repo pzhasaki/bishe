@@ -1,0 +1,30 @@
+<view class='content'>
+  <block wx:for="{{cartList}}" wx:key="_id">
+    <view class='row'>
+      <view class='row-lt'>
+        <image class='row-lt-img' src='{{item.listPicUrl}}'/>
+      </view>
+      <view class='row-rt'>
+        <text class='row-rt-name'>{{item.name}}</text>
+        <view class='row-rt-base'>
+          <text class='row-rt-base-price'>¥ {{item.retailPrice}}</text>
+          <view class='row-rt-base-num'>
+            <text class='num-item' data-item="{{item}}" data-type="reduce" bindtap="changeNum">-</text>
+            <input class='num-item num-input' value='{{item.quantity}}' data-item="{{item}}" data-type="input" bindblur="changeNum"/>
+            <text class='num-item' data-item="{{item}}" data-type="add" bindtap="changeNum">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='bottom'>
+  <view class='bottom-lt'>
+    <text>已选（{{selectedCount}}）</text>
+  </view>
+  <view class='bottom-rt'>
+    <text class='total-price'>¥{{totalPrice}}</text>
+    <view class='confirm' bindtap="confirmOrder">下单</view>
+  </view>
+</view>

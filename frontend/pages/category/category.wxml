@@ -1,0 +1,23 @@
+<!-- 分类 -->
+<view class='category-page'>
+  <scroll-view class="nav" scroll-y>
+    <text class="{{categoryIndex === index ? 'nav-current' : null}}" wx:for="{{navs}}" wx:key="{{index}}" bindtap="changeCurrent" data-index="{{index}}">{{item.name}}</text>
+  </scroll-view>
+
+  <swiper class='main' vertical current="{{categoryIndex}}">
+    <swiper-item wx:for="{{navs}}" wx:for-item="level01" wx:key="{{index}}" catchtouchmove="stopTouchMove">
+      <scroll-view class='content' scroll-y scroll-top="{{toTop}}">
+        <image class='banner' src='{{level01.imgUrl}}' />
+        <view wx:for="{{level01.subCateList}}" wx:for-item="level02" wx:key="{{index}}">
+          <view class='title' wx-if="{{level02.name}}">{{level02.name}}</view>
+          <view class='bar'>
+            <view class="item" wx:for="{{level02.children}}" wx:for-item="level03" wx:key="{{index}}" data-category-id="{{level01.id}}" data-sub-category-id="{{level03.id}}" bindtap="linkToListPage">
+              <image src='{{level03.wapBannerUrl}}' />
+              <text>{{level03.name}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

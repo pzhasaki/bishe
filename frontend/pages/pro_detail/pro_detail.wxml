@@ -1,0 +1,136 @@
+<!-- 产品详情 -->
+<view class="prodetail-section">
+  <view class="pics">
+    <swiper class="pics-content" indicator-dots autoplay interval="{{5000}}" duration="{{500}}">
+      <swiper-item wx:for="{{[detail.listPicUrl]}}" wx:key="{{index}}">
+        <image class="pro-pic" mode="widthFix" src="{{item}}"/>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- base -->
+  <view class="pro-base">
+    <view class="top">
+      <view class="pro-info">
+        <text class="name">{{detail.name}}</text>
+        <text class="desc">{{detail.simpleDesc}}</text>
+      </view>
+      <view class="judge-info">
+        <text class="judge-num">99.4%</text>
+        <text class="judge-btn">好评率 ></text>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="price"><text class="unit">¥</text>{{detail.retailPrice}}</view>
+      <view class="hd">
+        <text class="hd-item" wx:for="{{detail.itemTagList}}"  wx:key="{{index}}">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数量选择 -->
+  <view class="pro-opt">
+    <view class="opt-item num-bar" data-modal="attrs" bindtap="showModal">
+      <text>数量规格选择</text>
+      <image class="arrow" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-right-596d39df1e.png"/>
+    </view>
+
+    <!-- 服务 -->
+    <view class="opt-item service-bar" data-modal="service" bindtap="showModal">
+      <view class="service-main">
+        <text class="opt-title">服务：</text>
+        <view class="service-info">
+          <text class="service-item" wx:for="{{service}}" wx:key="{{index}}">{{item.title}}</text>
+        </view>
+      </view>
+      <image class="arrow" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-right-596d39df1e.png"/>
+    </view>
+  </view>
+
+  <!-- 评价 -->
+  <view class="judge">
+    <view class="judge-title">
+      <text class="judge-title-lt">用户评价（122222）</text>
+      <view class="judge-title-rt">
+        <text>99.4% 好评</text>
+        <image class="arrow" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-right-596d39df1e.png"/>
+      </view>
+    </view>
+    <view class="judge-item" wx:if="{{detail.comments && detail.comments.length}}">
+      <view class="user-bar">
+        <view class="user">
+          <image class="portait" src="{{detail.comments[0].frontUserAvatar}}"/>
+          <text>{{detail.comments[0].frontUserName}}</text>
+        </view>
+        <view class="score">
+          <block wx:for="{{detail.comments[0].star}}" wx:key="{{index}}">
+            <image class="score-item" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/star-smallYellow-34fe945be9.png"/>
+          </block>
+        </view>
+      </view>
+      <view class="info-bar">
+        <text>{{detail.comments[0].createTime}}</text>
+        <text wx:for="{{detail.comments[0].skuInfo}}" wx:key="{{index}}">{{item}}</text>
+      </view>
+      <view class="judge-desc">
+        {{detail.comments[0].content}}
+      </view>
+      <view class="judge-pic">
+        <image wx:for="{{detail.comments[0].picList}}" wx:key="{{index}}" src="{{item}}"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 详情 -->
+  <view class="detail">
+    <view class="params">
+      <text class="params-title">商品参数</text>
+      <view class="params-item" wx:for="{{detail.attrList}}" wx:key="{{index}}">
+        <text class="params-lt">{{item.attrName}}</text>
+        <text class="params-rt">{{item.attrValue}}</text>
+      </view>
+    </view>
+    <image wx:for="{{detail.detailImgs}}" wx:key="{{index}}" src="{{item}}" mode="widthFix"/>
+    <view class="issue">
+      <text class="issue-tit">- 常见问题 -</text>
+      <view class="issue-item" wx:for="{{detail.issueList}}" wx:key="{{index}}">
+        <text class="issue-q">{{item.question}}</text>
+        <text class="issue-a">{{item.answer}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="footer">
+    <view class="footer-item footer-home" bindtap="linkToHome">
+      <image src="../../images/menu/home.png"/>
+    </view>
+    <view class="footer-item footer-cart" bindtap="linkToCart">
+      <image src="../../images/menu/cart.png"/>
+    </view>
+    <view class="footer-item footer-buy">
+      <text>立即购买</text>
+    </view>
+    <view class="footer-item footer-add" bindtap="linkToCart">
+      <text>加入购物车</text>
+    </view>
+  </view>
+
+  <!-- 弹框 -->
+  <my-modal isType="bottom" isHide="{{!myModal.isShow}}">
+    <view style="background: #fff;">
+      <view class="sm-modal" wx:if="{{modal==='service'}}">
+        <text class="sm-title">服务</text>
+        <view class="sm-content">
+          <view class="sm-item" wx:for="{{service}}" wx:key="{{index}}">
+            <text class="sm-item-title">{{item.title}}</text>
+            <text class="sm-item-info">{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{modal==='attrs'}}">
+        <my-pro-attr attrs="{{attrs}}"/>
+      </view>
+    </view>
+  </my-modal>
+</view>

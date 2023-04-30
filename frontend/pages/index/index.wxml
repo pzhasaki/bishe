@@ -1,0 +1,130 @@
+<!--client/pages/index/index.wxml-->
+<import src='../_template/template.wxml' />
+
+<view class='index-page theme-body'>
+  <view class='search'>
+    <text>搜索商品，共19083款好物</text>
+  </view>
+  <view class='banner'>
+    <my-swiper class='banner-main' ex-class="banner-main" data="{{bannerProps}}" />
+  </view>
+  <view class='safe'>
+    <template is="promise"/>
+  </view>
+
+  <!-- 品牌制造商 -->
+  <view class='brand'>
+    <navigator class='title' url="../brand/brand">
+      <view class='title-lt'>品牌制造商直供</view>
+      <view class='title-rt'>
+        <text>更多</text>
+        <image src='http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/index-titleArrow-219f348910.png'/>
+      </view>
+    </navigator>
+    <view class='brand-main'>
+      <view class='brand-item' style="background: url({{item.webIndexVerticalPicUrl}}) no-repeat center" wx:for="{{brands}}" wx:key="{{index}}">
+        <text class='brand-item-name'>{{item.name}}</text>
+        <view class='brand-item-price'>
+          <text>{{item.floorPrice}}元起</text>
+          <view class='unit-label'>
+            <text>上新</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 限时购 -->
+  <view class='limit'>
+    <navigator class='title' url="../hd_limit/hd_limit">
+      <view class='title-lt'>
+        限时购
+        <view class='limit-time'>
+          <text>01</text>:
+          <text>43</text>:
+          <text>57</text>
+        </view>
+      </view>
+      <view class='title-rt'>
+        <text>更多</text>
+        <image src='http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/index-titleArrow-219f348910.png'/>
+      </view>
+    </navigator>
+    <view class='limit-main'>
+      <view class='limit-item' wx:for='{{hotType02}}' wx:key='{{index}}' data-item="{{item}}" bindtap="linkToProDetail">
+        <image src='{{item.listPicUrl}}'/>
+        <view class='limit-price'>
+          <text class='theme-color'>¥ {{item.retailPrice}}</text>
+          <text class='limit-price-original' wx:if="{{item.counterPrice > item.retailPrice}}">¥ {{item.counterPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 人气推荐 -->
+  <view class='hot'>
+    <navigator class='title' url="../hd_rmd/hd_rmd">
+      <text class='title-lt'>人气推荐</text>
+      <view class='title-rt'>
+        <text>更多</text>
+        <image src='http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/index-titleArrow-219f348910.png'/>
+      </view>
+    </navigator>
+    <view class='hot-main'>
+      <view class='hot-rmd' data-item="{{hotType01}}" bindtap="linkToProDetai">
+        <view class='hot-rmd-img'>
+          <image src='{{hotType01.listPicUrl}}'/>
+        </view>
+        <view class='hot-rmd-info'>
+          <view class='unit-label'>
+            <text wx:for='{{hotType01.label}}' wx:key='{{index}}'>{{item}}</text>
+          </view>
+          <text class='hot-rmd-name'>{{hotType01.name}}</text>
+          <text class='hot-rmd-desc'>{{hotType01.simpleDesc}}</text>
+          <text class='hot-rmd-price theme-color'>¥ {{hotType01.retailPrice}}</text>
+        </view>
+      </view>
+      <view class='hot-normal'>
+        <view class='hot-normal-item' wx:for='{{hotType02}}' wx:key='{{index}}' data-item="{{item}}" bindtap="linkToProDetail">
+          <image src='{{item.listPicUrl}}'/>
+          <view class='hot-normal-info'>
+            <view class='unit-label'>
+              <text wx:for='{{item.label}}' wx:key='{{index}}'>{{item}}</text>
+            </view>
+            <text class='hot-normal-name'>{{item.name}}</text>
+            <text class='hot-normal-price theme-color'>¥ {{item.retailPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热销榜 -->
+  <view class='hot-category'>
+    <view class='title'>
+      <text class='title-lt'>类目热销榜</text>
+    </view>
+    <view class='hotsale'>
+      <view class='hotsale-rmd'>
+        <view class='hotsale-rmd-item' wx:for='{{categoriesType1}}' wx:key='{{index}}' data-category-id='{{item.id}}' bindtap="linkToProList">
+          <text>{{item.name}}榜</text>
+          <image src='{{item.miniImgUrl}}'/>
+        </view>
+      </view>
+      <view class='hotsale-normal'>
+        <view class='hotsale-normal-item' wx:for='{{categoriesType2}}' wx:key='{{index}}' data-category-id='{{item.id}}' bindtap="linkToProList">
+          <text>{{item.name}}榜</text>
+          <image src='{{item.miniImgUrl}}'/>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 为你推荐 -->
+  <view class='rmd'>
+    <view class='title center'>
+      <text class='title-lt'>为你推荐</text>
+    </view>
+    <template is="product" data="{{data: recommends}}"/>
+  </view>
+</view>

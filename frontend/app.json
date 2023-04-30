@@ -1,0 +1,60 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/pro_detail/pro_detail",
+    "pages/category/category",
+    "pages/brand/brand",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/my_addr/my_addr",
+    "pages/my_addr_sub/my_addr_sub",
+    "pages/my_integral/my_integral",
+    "pages/welfare/welfare",
+    "pages/pro_list/pro_list",
+    "pages/judge/judge",
+    "pages/hd_limit/hd_limit",
+    "pages/hd_rmd/hd_rmd"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#b4282d",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/menu/home.png",
+        "selectedIconPath": "images/menu/home-select.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/menu/category.png",
+        "selectedIconPath": "images/menu/category-select.png"
+      },
+      {
+        "pagePath": "pages/judge/judge",
+        "text": "好评",
+        "iconPath": "images/menu/judge.png",
+        "selectedIconPath": "images/menu/judge-select.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/menu/cart.png",
+        "selectedIconPath": "images/menu/cart-select.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人",
+        "iconPath": "images/menu/user.png",
+        "selectedIconPath": "images/menu/user-select.png"
+      }
+    ]
+  }
+}

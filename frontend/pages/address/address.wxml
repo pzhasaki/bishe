@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <view class="title">收货地址</view>
+  </view>
+  <view class="address-list">
+    <view class="address-item">
+      <view class="name">张三</view>
+      <view class="phone">13777777777</view>
+      <view class="detail">重庆市渝北区XXX路XXX小区XXX号楼XXX室</view>
+      <view class="operator">
+        <image class="icon" src="/images/edit.png" />
+        <image class="icon" src="/images/delete.png" />
+      </view>
+    </view>
+    <view class="address-item">
+      <view class="name">李四</view>
+      <view class="phone">13888888888</view>
+      <view class="detail">重庆市沙坪坝区XXX路XXX小区XXX号楼XXX室</view>
+      <view class="operator">
+        <image class="icon" src="/images/edit.png" />
+        <image class="icon" src="/images/delete.png" />
+      </view>
+    </view>
+  </view>
+  <view class="add-btn">添加新地址</view>
+</view>

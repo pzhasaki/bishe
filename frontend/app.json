@@ -14,7 +14,8 @@
     "pages/pro_list/pro_list",
     "pages/judge/judge",
     "pages/hd_limit/hd_limit",
-    "pages/hd_rmd/hd_rmd"
+    "pages/hd_rmd/hd_rmd",
+    "pages/address/address"
   ],
   "window": {
     "backgroundTextStyle": "light",

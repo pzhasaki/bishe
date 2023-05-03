@@ -1,0 +1,66 @@
+.container {
+  background-color: #f7f7f7;
+}
+
+.header {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.address-list {
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.address-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.phone {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.detail {
+  font-size: 14px;
+  color: #666;
+  line-height: 20px;
+}
+
+.operator {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+}
+
+.add-btn {
+  margin-top: 20rpx;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 16px;
+  color: #e64340;
+  border-top: 1rpx solid #eee;
+}

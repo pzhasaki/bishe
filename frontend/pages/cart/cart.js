@@ -81,7 +81,9 @@ Page({
 
   // 点击下单按钮
   confirmOrder() {
-    console.log('下单');
+    wx.navigateTo({
+      url: '/pages/address/address',
+    })
   },
 
 })

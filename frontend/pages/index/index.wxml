@@ -12,28 +12,6 @@
     <template is="promise"/>
   </view>
 
-  <!-- 品牌制造商 -->
-  <view class='brand'>
-    <navigator class='title' url="../brand/brand">
-      <view class='title-lt'>品牌制造商直供</view>
-      <view class='title-rt'>
-        <text>更多</text>
-        <image src='http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/index-titleArrow-219f348910.png'/>
-      </view>
-    </navigator>
-    <view class='brand-main'>
-      <view class='brand-item' style="background: url({{item.webIndexVerticalPicUrl}}) no-repeat center" wx:for="{{brands}}" wx:key="{{index}}">
-        <text class='brand-item-name'>{{item.name}}</text>
-        <view class='brand-item-price'>
-          <text>{{item.floorPrice}}元起</text>
-          <view class='unit-label'>
-            <text>上新</text>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
-
   <!-- 限时购 -->
   <view class='limit'>
     <navigator class='title' url="../hd_limit/hd_limit">
@@ -97,34 +75,5 @@
         </view>
       </view>
     </view>
-  </view>
-
-  <!-- 热销榜 -->
-  <view class='hot-category'>
-    <view class='title'>
-      <text class='title-lt'>类目热销榜</text>
-    </view>
-    <view class='hotsale'>
-      <view class='hotsale-rmd'>
-        <view class='hotsale-rmd-item' wx:for='{{categoriesType1}}' wx:key='{{index}}' data-category-id='{{item.id}}' bindtap="linkToProList">
-          <text>{{item.name}}榜</text>
-          <image src='{{item.miniImgUrl}}'/>
-        </view>
-      </view>
-      <view class='hotsale-normal'>
-        <view class='hotsale-normal-item' wx:for='{{categoriesType2}}' wx:key='{{index}}' data-category-id='{{item.id}}' bindtap="linkToProList">
-          <text>{{item.name}}榜</text>
-          <image src='{{item.miniImgUrl}}'/>
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <!-- 为你推荐 -->
-  <view class='rmd'>
-    <view class='title center'>
-      <text class='title-lt'>为你推荐</text>
-    </view>
-    <template is="product" data="{{data: recommends}}"/>
   </view>
 </view>

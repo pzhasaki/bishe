@@ -23,10 +23,6 @@
           <text>57</text>
         </view>
       </view>
-      <view class='title-rt'>
-        <text>更多</text>
-        <image src='http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/index-titleArrow-219f348910.png'/>
-      </view>
     </navigator>
     <view class='limit-main'>
       <view class='limit-item' wx:for='{{hotType02}}' wx:key='{{index}}' data-item="{{item}}" bindtap="linkToProDetail">

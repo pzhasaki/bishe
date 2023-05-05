@@ -15,10 +15,6 @@
         <text class="name">{{detail.name}}</text>
         <text class="desc">{{detail.simpleDesc}}</text>
       </view>
-      <view class="judge-info">
-        <text class="judge-num">99.4%</text>
-        <text class="judge-btn">好评率 ></text>
-      </view>
     </view>
     <view class="bottom">
       <view class="price"><text class="unit">¥</text>{{detail.retailPrice}}</view>

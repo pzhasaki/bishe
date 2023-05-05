@@ -17,12 +17,6 @@
       <image class='icon' src='../../images/personal/1.png'/>
       <text class='cate-name'>我的拼团</text>
     </view>
-    <view class='item'>
-      <navigator  url="../my_integral/my_integral">
-        <image class='icon' src='../../images/personal/2.png'/>
-        <text class='cate-name'>我的积分</text>
-      </navigator>
-    </view>
     <view class='item' bindtap="showTipModal">
       <image class='icon' src='../../images/personal/3.png'/>
       <text class='cate-name'>退换/售后</text>

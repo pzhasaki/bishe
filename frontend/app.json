@@ -12,7 +12,6 @@
     "pages/my_integral/my_integral",
     "pages/welfare/welfare",
     "pages/pro_list/pro_list",
-    "pages/judge/judge",
     "pages/hd_limit/hd_limit",
     "pages/hd_rmd/hd_rmd",
     "pages/address/address"
@@ -37,12 +36,6 @@
         "text": "分类",
         "iconPath": "images/menu/category.png",
         "selectedIconPath": "images/menu/category-select.png"
-      },
-      {
-        "pagePath": "pages/judge/judge",
-        "text": "好评",
-        "iconPath": "images/menu/judge.png",
-        "selectedIconPath": "images/menu/judge-select.png"
       },
       {
         "pagePath": "pages/cart/cart",

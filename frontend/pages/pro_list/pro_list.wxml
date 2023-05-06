@@ -15,7 +15,7 @@
       <block wx:for="{{navs.subCateList}}" wx:key="{{index}}">
         <swiper-item wx:for='{{item.children}}' wx:key='{{index}}' item-id="{{item.id}}">
           <scroll-view scroll-y style='height: 100%'>
-            <template is="product" data="{{data: recommends}}"/>
+            <template is="product" data="{{data: recommends,  showItem: current}}"/>
           </scroll-view>
         </swiper-item>
       </block>

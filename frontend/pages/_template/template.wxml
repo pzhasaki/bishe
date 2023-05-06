@@ -15,7 +15,7 @@
   <view class='temp-pro'>
     <block wx:for="{{data}}"  wx:key="{{item.id}}">
       <view data-item="{{item}}" bindtap="linkToProDetail">
-        <view class='temp-pro-item'>
+        <view wx:if = "{{showItem == item.itemType}}" class='temp-pro-item'>
           <image src="{{item.listPicUrl}}" alt='{{item.name}}'/>
           <view class='temp-pro-info'>
             <view class='unit-label'>
